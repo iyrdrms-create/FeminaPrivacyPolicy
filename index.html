@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femina - Your Intelligent Cycle Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Femina</h1>
+            <p id="app-tagline">Your Intelligent Cycle Companion</p>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('en')">English</button>
+                <button class="lang-btn" onclick="switchLang('id')">Bahasa Indonesia</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#home" id="nav-home" onclick="showSection('home')">Home</a>
+        <a href="#privacy" id="nav-privacy" onclick="showSection('privacy')">Privacy Policy</a>
+        <a href="#terms" id="nav-terms" onclick="showSection('terms')">Terms & Conditions</a>
+    </nav>
+
+    <main class="container">
+        <!-- HOME SECTION - ENGLISH -->
+        <section id="home-en" class="section-content active lang-en">
+            <div class="hero">
+                <h2>Empowering Women's Health</h2>
+                <p>Track your cycle, understand your body patterns, and stay connected with your health journey in a simple and elegant way.</p>
+                <a href="#" class="download-btn">Coming Soon on Play Store</a>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Smart Predictions</h3>
+                    <p>Accurate predictions for your next period, ovulation, and fertile window.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Muslim Mode</h3>
+                    <p>Integrated Fiqh context for prayer and fasting status management.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Privacy First</h3>
+                    <p>Your data stays on your device. No cloud syncing, no data selling.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOME SECTION - INDONESIAN -->
+        <section id="home-id" class="section-content lang-id">
+            <div class="hero">
+                <h2>Mendukung Kesehatan Wanita</h2>
+                <p>Pantau siklus Anda, pahami pola tubuh Anda, dan tetap terhubung dengan perjalanan kesehatan Anda dengan cara yang sederhana dan elegan.</p>
+                <a href="#" class="download-btn">Segera Hadir di Play Store</a>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Prediksi Pintar</h3>
+                    <p>Prediksi akurat untuk menstruasi berikutnya, ovulasi, dan masa subur.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Mode Muslimah</h3>
+                    <p>Konteks Fiqh terintegrasi untuk manajemen status ibadah shalat dan puasa.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Privasi Utama</h3>
+                    <p>Data Anda tetap di perangkat Anda. Tanpa sinkronisasi cloud, tanpa penjualan data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY SECTION - ENGLISH -->
+        <section id="privacy-en" class="section-content lang-en content-box">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: May 12, 2026</p>
+            <p>Welcome to Femina. Your privacy is critically important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p><strong>Personal Data:</strong> We do not require you to create an account or provide personal identifiers like your name or email. Any data you enter (cycle dates, symptoms, moods) is stored locally on your device.</p>
+            <p><strong>Sensitive Health Data:</strong> Information regarding your menstrual cycle, symptoms, and health notes are stored locally in the app's database. We do not have access to this data unless you explicitly export or share it.</p>
+
+            <h3>2. How We Use Your Information</h3>
+            <ul>
+                <li>To provide accurate cycle predictions and health insights.</li>
+                <li>To personalize your app experience (e.g., Muslim Mode settings).</li>
+                <li>To show relevant advertisements via Google AdMob.</li>
+            </ul>
+
+            <h3>3. Data Storage and Security</h3>
+            <p>All your health data is stored using Android's Room Database on your local storage. We recommend using the built-in <strong>Biometric Lock</strong> feature in the app settings to prevent unauthorized access to your device.</p>
+
+            <h3>4. Contact Us</h3>
+            <div class="card">
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p><strong>Email:</strong> support@Femina.com</p>
+            </div>
+        </section>
+
+        <!-- PRIVACY SECTION - INDONESIAN -->
+        <section id="privacy-id" class="section-content lang-id content-box">
+            <h2>Kebijakan Privasi</h2>
+            <p>Terakhir diperbarui: 12 Mei 2026</p>
+            <p>Selamat datang di Femina. Privasi Anda sangat penting bagi kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat Anda menggunakan aplikasi seluler kami.</p>
+
+            <h3>1. Informasi yang Kami Kumpulkan</h3>
+            <p><strong>Data Pribadi:</strong> Kami tidak mewajibkan Anda untuk membuat akun atau memberikan pengenal pribadi. Semua data yang Anda masukkan (tanggal siklus, gejala, suasana hati) disimpan secara lokal di perangkat Anda.</p>
+            <p><strong>Data Kesehatan Sensitif:</strong> Informasi mengenai siklus menstruasi, gejala, dan catatan kesehatan Anda disimpan secara lokal di basis data aplikasi. Kami tidak memiliki akses ke data ini.</p>
+
+            <h3>2. Bagaimana Kami Menggunakan Informasi Anda</h3>
+            <ul>
+                <li>Untuk memberikan prediksi siklus dan wawasan kesehatan yang akurat.</li>
+                <li>Untuk mempersonalisasi pengalaman aplikasi Anda (misalnya pengaturan Mode Muslimah).</li>
+                <li>Untuk menampilkan iklan melalui Google AdMob.</li>
+            </ul>
+
+            <h3>3. Kontak Kami</h3>
+            <div class="card">
+                <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami di:</p>
+                <p><strong>Email:</strong> support@Femina.com</p>
+            </div>
+        </section>
+
+        <!-- TERMS SECTION - ENGLISH -->
+        <section id="terms-en" class="section-content lang-en content-box">
+            <h2>Terms & Conditions</h2>
+            <p>By downloading or using the Femina app, these terms will automatically apply to you.</p>
+            
+            <h3>1. Use of the App</h3>
+            <p>Femina is designed to help you track your menstrual cycle. It provides predictions based on mathematical algorithms and should NOT be used as a primary method of birth control or medical diagnosis.</p>
+
+            <h3>2. Medical Disclaimer</h3>
+            <div class="card" style="border-left: 4px solid #dc2626;">
+                <p><strong>WARNING:</strong> The information provided by Femina is for educational and tracking purposes only. Always consult with a qualified healthcare professional for medical advice.</p>
+            </div>
+        </section>
+
+        <!-- TERMS SECTION - INDONESIAN -->
+        <section id="terms-id" class="section-content lang-id content-box">
+            <h2>Syarat & Ketentuan</h2>
+            <p>Dengan mengunduh atau menggunakan aplikasi Femina, ketentuan ini akan berlaku secara otomatis untuk Anda.</p>
+            
+            <h3>1. Penggunaan Aplikasi</h3>
+            <p>Femina dirancang untuk membantu Anda melacak siklus menstruasi. Aplikasi ini memberikan prediksi berdasarkan algoritma matematika dan TIDAK boleh digunakan sebagai metode utama KB atau diagnosis medis.</p>
+
+            <h3>2. Penafian Medis (Disclaimer)</h3>
+            <div class="card" style="border-left: 4px solid #dc2626;">
+                <p><strong>PERINGATAN:</strong> Informasi yang disediakan oleh Femina hanya untuk tujuan edukasi dan pelacakan. Selalu berkonsultasi dengan profesional kesehatan untuk nasihat medis.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Femina App. All rights reserved.</p>
+            <p id="footer-credit">Made with ❤️ for Women's Health</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        let currentSection = 'home';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            updateDisplay();
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(lang === 'en' ? 'english' : 'indonesia')) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function showSection(section) {
+            currentSection = section;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.querySelectorAll('.section-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            const targetId = `${currentSection}-${currentLang}`;
+            document.getElementById(targetId).classList.add('active');
+
+            const navHome = document.getElementById('nav-home');
+            const navPrivacy = document.getElementById('nav-privacy');
+            const navTerms = document.getElementById('nav-terms');
+            const tagline = document.getElementById('app-tagline');
+            const footerCredit = document.getElementById('footer-credit');
+
+            if (currentLang === 'id') {
+                navHome.innerText = 'Beranda';
+                navPrivacy.innerText = 'Kebijakan Privasi';
+                navTerms.innerText = 'Syarat & Ketentuan';
+                tagline.innerText = 'Pendamping Siklus Pintar Anda';
+                footerCredit.innerText = 'Dibuat dengan ❤️ untuk Kesehatan Wanita';
+            } else {
+                navHome.innerText = 'Home';
+                navPrivacy.innerText = 'Privacy Policy';
+                navTerms.innerText = 'Terms & Conditions';
+                tagline.innerText = 'Your Intelligent Cycle Companion';
+                footerCredit.innerText = 'Made with ❤️ for Women\'s Health';
+            }
+        }
+    </script>
+</body>
+</html>
