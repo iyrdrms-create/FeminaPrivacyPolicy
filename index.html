@@ -30,7 +30,7 @@
 
     <main class="container">
         <!-- HOME SECTION - ENGLISH -->
-        <section id="home-en" class="section-content active lang-en">
+        <section id="home-en" class="section-content lang-en">
             <div class="hero">
                 <h2>Empowering Women's Health</h2>
                 <p>Track your cycle, understand your body patterns, and stay connected with your health journey in a simple and elegant way.</p>
@@ -78,7 +78,7 @@
         </section>
 
         <!-- PRIVACY SECTION - ENGLISH -->
-        <section id="privacy-en" class="section-content lang-en content-box">
+        <section id="privacy-en" class="section-content active lang-en content-box">
             <h2>Privacy Policy</h2>
             <p>Last updated: June 4, 2026</p>
             <p>Welcome to Femina. Your privacy is critically important to us. This Privacy Policy explains how we collect, use, retain, share, and protect your information, and how you can access or delete your data when you use our mobile application.</p>
@@ -192,7 +192,7 @@
             <p>Femina tidak ditujukan untuk anak-anak di bawah usia 13 tahun (atau usia minimum persetujuan digital di negara Anda). Kami tidak dengan sengaja mengumpulkan data pribadi dari anak-anak. Jika Anda yakin seorang anak telah memberikan kami data pribadi, silakan hubungi kami agar kami dapat menghapusnya.</p>
 
             <h3>7. Keamanan Data</h3>
-            <p>Semua data kesehatan Anda disimpan secara lokal menggunakan Room Database terenkripsi Android di penyimpanan perangkat Anda. Kami sangat menyarankan untuk mengaktifkan fitur <strong>Kunci Biometrik</strong> bawaan di pengaturan aplikasi untuk mencegah akses tidak sah ke perangkat Anda. Perlu diketahui bahwa tidak ada metode transmisi atau penyimpanan yang 100% aman, namun kami mengambil langkah-langkah yang wajar secara komersial untuk melindungi data Anda.</p>
+            <p>Semua data kesehatan Anda disimpan secara lokal menggunakan Room Database terenkripsi Android di penyimpanan perangkat Anda. Kami sangat menyarankan untuk mengaktifkan fitur <strong>Kunci Biometrik</strong> bawaan di pengaturan aplikasi untuk mencegah akses tidak sah ke perangkat Anda. Perlu diketahui bahwa no metode transmisi atau penyimpanan yang 100% aman, namun kami mengambil langkah-langkah yang wajar secara komersial untuk melindungi data Anda.</p>
 
             <h3>8. Hak-Hak Anda</h3>
             <p>Tergantung pada yurisdiksi Anda (misalnya GDPR untuk pengguna EEA, CCPA untuk pengguna California), Anda mungkin memiliki hak untuk mengakses, memperbaiki, menghapus, membatasi, atau memindahkan data Anda, serta untuk menolak pemrosesan tertentu. Karena Femina menyimpan data secara lokal di perangkat Anda, Anda dapat menggunakan sebagian besar hak ini secara langsung melalui kontrol di dalam aplikasi seperti yang dijelaskan di Bagian 5.</p>
@@ -245,7 +245,7 @@
 
     <script>
         let currentLang = 'en';
-        let currentSection = 'home';
+        let currentSection = 'privacy'; // Default to privacy policy for Google Play compliance
 
         function switchLang(lang) {
             currentLang = lang;
@@ -270,7 +270,10 @@
             });
 
             const targetId = `${currentSection}-${currentLang}`;
-            document.getElementById(targetId).classList.add('active');
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                targetEl.classList.add('active');
+            }
 
             const navHome = document.getElementById('nav-home');
             const navPrivacy = document.getElementById('nav-privacy');
@@ -278,20 +281,45 @@
             const tagline = document.getElementById('app-tagline');
             const footerCredit = document.getElementById('footer-credit');
 
+            // Update active state in nav
+            [navHome, navPrivacy, navTerms].forEach(el => {
+                if (el) el.classList.remove('active');
+            });
+            const activeNav = document.getElementById(`nav-${currentSection}`);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
             if (currentLang === 'id') {
-                navHome.innerText = 'Beranda';
-                navPrivacy.innerText = 'Kebijakan Privasi';
-                navTerms.innerText = 'Syarat & Ketentuan';
-                tagline.innerText = 'Pendamping Siklus Pintar Anda';
-                footerCredit.innerText = 'Dibuat dengan ❤️ untuk Kesehatan Wanita';
+                if (navHome) navHome.innerText = 'Beranda';
+                if (navPrivacy) navPrivacy.innerText = 'Kebijakan Privasi';
+                if (navTerms) navTerms.innerText = 'Syarat & Ketentuan';
+                if (tagline) tagline.innerText = 'Pendamping Siklus Pintar Anda';
+                if (footerCredit) footerCredit.innerText = 'Dibuat dengan ❤️ untuk Kesehatan Wanita';
             } else {
-                navHome.innerText = 'Home';
-                navPrivacy.innerText = 'Privacy Policy';
-                navTerms.innerText = 'Terms & Conditions';
-                tagline.innerText = 'Your Intelligent Cycle Companion';
-                footerCredit.innerText = 'Made with ❤️ for Women\'s Health';
+                if (navHome) navHome.innerText = 'Home';
+                if (navPrivacy) navPrivacy.innerText = 'Privacy Policy';
+                if (navTerms) navTerms.innerText = 'Terms & Conditions';
+                if (tagline) tagline.innerText = 'Your Intelligent Cycle Companion';
+                if (footerCredit) footerCredit.innerText = 'Made with ❤️ for Women\'s Health';
             }
         }
+
+        // Simple router using hash change
+        function handleRouting() {
+            const hash = window.location.hash;
+            if (hash === '#home') {
+                currentSection = 'home';
+            } else if (hash === '#terms') {
+                currentSection = 'terms';
+            } else {
+                currentSection = 'privacy'; // default
+            }
+            updateDisplay();
+        }
+
+        window.addEventListener('load', handleRouting);
+        window.addEventListener('hashchange', handleRouting);
     </script>
 </body>
 </html>

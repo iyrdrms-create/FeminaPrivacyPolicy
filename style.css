@@ -77,10 +77,17 @@ nav a {
     color: var(--primary-emerald);
     font-weight: 600;
     transition: color 0.3s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
 }
 
 nav a:hover {
     color: var(--primary-light);
+}
+
+nav a.active {
+    color: var(--primary-emerald);
+    border-bottom: 2px solid var(--primary-emerald);
 }
 
 /* Home/Hero Styles */
